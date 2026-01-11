@@ -25,9 +25,10 @@
         >;
     };
 
+    /* [필수] 공식 문서의 문법을 쓰기 위해 '7개 인자'를 받는 매크로를 정의합니다. */
     key_physical_attrs: key_physical_attrs {
         compatible = "zmk,physical-layout-keys-entry";
-        #binding-cells = <3>;
+        #binding-cells = <7>; /* 너비, 높이, X, Y, R, RX, RY (총 7개) */
     };
 
     klotz_physical_layouts {
@@ -39,18 +40,27 @@
             transform = <&default_transform>;
             kscan = <&mock_kscan>;
             
-            keys = <
-                &key_physical_attrs 0 0 0      &key_physical_attrs 1000 0 0      &key_physical_attrs 2000 0 0      &key_physical_attrs 3000 0 0      &key_physical_attrs 4000 0 0
-                &key_physical_attrs 6000 0 0   &key_physical_attrs 7000 0 0      &key_physical_attrs 8000 0 0      &key_physical_attrs 9000 0 0      &key_physical_attrs 10000 0 0
+            /* * 공식 문서대로 작성했습니다.
+             * 문법: <&key_physical_attrs 너비 높이 X Y R RX RY>,
+             * 단위: 100 = 1U (키 하나 크기)
+             */
+            keys = 
+                /* Top Row */
+                <&key_physical_attrs 100 100   0   0 0 0 0>, <&key_physical_attrs 100 100 100   0 0 0 0>, <&key_physical_attrs 100 100 200   0 0 0 0>, <&key_physical_attrs 100 100 300   0 0 0 0>, <&key_physical_attrs 100 100 400   0 0 0 0>,
+                <&key_physical_attrs 100 100 600   0 0 0 0>, <&key_physical_attrs 100 100 700   0 0 0 0>, <&key_physical_attrs 100 100 800   0 0 0 0>, <&key_physical_attrs 100 100 900   0 0 0 0>, <&key_physical_attrs 100 100 1000  0 0 0 0>,
 
-                &key_physical_attrs 0 1000 0   &key_physical_attrs 1000 1000 0   &key_physical_attrs 2000 1000 0   &key_physical_attrs 3000 1000 0   &key_physical_attrs 4000 1000 0
-                &key_physical_attrs 6000 1000 0 &key_physical_attrs 7000 1000 0  &key_physical_attrs 8000 1000 0   &key_physical_attrs 9000 1000 0   &key_physical_attrs 10000 1000 0
+                /* Home Row */
+                <&key_physical_attrs 100 100   0 100 0 0 0>, <&key_physical_attrs 100 100 100 100 0 0 0>, <&key_physical_attrs 100 100 200 100 0 0 0>, <&key_physical_attrs 100 100 300 100 0 0 0>, <&key_physical_attrs 100 100 400 100 0 0 0>,
+                <&key_physical_attrs 100 100 600 100 0 0 0>, <&key_physical_attrs 100 100 700 100 0 0 0>, <&key_physical_attrs 100 100 800 100 0 0 0>, <&key_physical_attrs 100 100 900 100 0 0 0>, <&key_physical_attrs 100 100 1000 100 0 0 0>,
 
-                &key_physical_attrs 0 2000 0   &key_physical_attrs 1000 2000 0   &key_physical_attrs 2000 2000 0   &key_physical_attrs 3000 2000 0   &key_physical_attrs 4000 2000 0
-                &key_physical_attrs 6000 2000 0 &key_physical_attrs 7000 2000 0  &key_physical_attrs 8000 2000 0   &key_physical_attrs 9000 2000 0   &key_physical_attrs 10000 2000 0
+                /* Bottom Row */
+                <&key_physical_attrs 100 100   0 200 0 0 0>, <&key_physical_attrs 100 100 100 200 0 0 0>, <&key_physical_attrs 100 100 200 200 0 0 0>, <&key_physical_attrs 100 100 300 200 0 0 0>, <&key_physical_attrs 100 100 400 200 0 0 0>,
+                <&key_physical_attrs 100 100 600 200 0 0 0>, <&key_physical_attrs 100 100 700 200 0 0 0>, <&key_physical_attrs 100 100 800 200 0 0 0>, <&key_physical_attrs 100 100 900 200 0 0 0>, <&key_physical_attrs 100 100 1000 200 0 0 0>,
 
-                &key_physical_attrs 3000 3000 0 &key_physical_attrs 4000 3000 0  &key_physical_attrs 6000 3000 0   &key_physical_attrs 7000 3000 0
-            >;
+                /* Thumbs (콤마 주의: 마지막 항목에는 콤마 없음) */
+                <&key_physical_attrs 100 100 300 300 0 0 0>, <&key_physical_attrs 100 100 400 300 0 0 0>,
+                <&key_physical_attrs 100 100 600 300 0 0 0>, <&key_physical_attrs 100 100 700 300 0 0 0>
+            ;
         };
     };
 
