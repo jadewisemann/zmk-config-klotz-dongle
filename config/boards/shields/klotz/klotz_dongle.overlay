@@ -5,12 +5,13 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <physical_layouts.dtsi>
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix_transform = &default_transform;
+        /* 아래 줄이 있어야 Studio에서 이 레이아웃을 인식합니다 */
+        zmk,physical-layout = &physical_layout0;
     };
 
     default_transform: keymap_transform {
@@ -32,10 +33,10 @@
         kscan = <&mock_kscan>;
         
         keys = <
-            <&key_physical_attrs 0 0 0> <&key_physical_attrs 1000 0 0> <&key_physical_attrs 2000 0 0> <&key_physical_attrs 3000 0 0> <&key_physical_attrs 4000 0 0>    <&key_physical_attrs 6000 0 0> <&key_physical_attrs 7000 0 0> <&key_physical_attrs 8000 0 0> <&key_physical_attrs 9000 0 0> <&key_physical_attrs 10000 0 0>
-            <&key_physical_attrs 0 1000 0> <&key_physical_attrs 1000 1000 0> <&key_physical_attrs 2000 1000 0> <&key_physical_attrs 3000 1000 0> <&key_physical_attrs 4000 1000 0>    <&key_physical_attrs 6000 1000 0> <&key_physical_attrs 7000 1000 0> <&key_physical_attrs 8000 1000 0> <&key_physical_attrs 9000 1000 0> <&key_physical_attrs 10000 1000 0>
-            <&key_physical_attrs 0 2000 0> <&key_physical_attrs 1000 2000 0> <&key_physical_attrs 2000 2000 0> <&key_physical_attrs 3000 2000 0> <&key_physical_attrs 4000 2000 0>    <&key_physical_attrs 6000 2000 0> <&key_physical_attrs 7000 2000 0> <&key_physical_attrs 8000 2000 0> <&key_physical_attrs 9000 2000 0> <&key_physical_attrs 10000 2000 0>
-                                            <&key_physical_attrs 3000 3000 0> <&key_physical_attrs 4000 3000 0>    <&key_physical_attrs 6000 3000 0> <&key_physical_attrs 7000 3000 0>
+            <0 0 0> <1000 0 0> <2000 0 0> <3000 0 0> <4000 0 0>      <6000 0 0> <7000 0 0> <8000 0 0> <9000 0 0> <10000 0 0>
+            <0 1000 0> <1000 1000 0> <2000 1000 0> <3000 1000 0> <4000 1000 0>    <6000 1000 0> <7000 1000 0> <8000 1000 0> <9000 1000 0> <10000 1000 0>
+            <0 2000 0> <1000 2000 0> <2000 2000 0> <3000 2000 0> <4000 2000 0>    <6000 2000 0> <7000 2000 0> <8000 2000 0> <9000 2000 0> <10000 2000 0>
+                                                <3000 3000 0> <4000 3000 0>       <6000 3000 0> <7000 3000 0>
         >;
     };
 
