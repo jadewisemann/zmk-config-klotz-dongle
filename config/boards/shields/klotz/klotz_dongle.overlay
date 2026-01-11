@@ -13,13 +13,18 @@
         /delete-property/ zmk,backlight;
     };
 
-    /* 실제 kscan0 노드와 겹치지 않도록 이름을 zmk_mock_kscan으로 변경 */
     mock_kscan: zmk_mock_kscan {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
+
+    /* 동글에서 물리 센서 노드 비활성화 */
+    /delete-node/ sensors;
+
+    /* 비활성화된 kscan0을 참조하여 발생하는 컴파일 에러 방지 */
+    /delete-node/ soft_off_wakers;
 };
 
 &left_encoder { status = "disabled"; };
