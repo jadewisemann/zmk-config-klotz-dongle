@@ -1,18 +1,24 @@
-if SHIELD_KLOTZ_LEFT
+if SHIELD_KLOTZ_DONGLE
 
     config ZMK_KEYBOARD_NAME
         default "KLOTZ"
 
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
         default y
+    
+    config ZMK_USB
+        default y
 
 endif # LEFT
 
 
 
-if SHIELD_KLOTZ_LEFT || SHIELD_KLOTZ_RIGHT
+if SHIELD_KLOTZ_LEFT || SHIELD_KLOTZ_RIGHT || SHIELD_KLOTZ_DONGLE
 
     config ZMK_SPLIT
+        default y
+
+    config ZMK_BLE
         default y
 
 endif # LEFT RIGHT
