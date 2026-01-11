@@ -10,6 +10,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &klotz_physical_layout;
+        /delete-property/ zmk,backlight;
     };
 
     mock_kscan: kscan {
@@ -19,6 +20,9 @@
         events = <0>;
     };
 };
+
+&left_encoder { status = "disabled"; };
+&right_encoder { status = "disabled"; };
 
 &kscan0 {
     status = "disabled";
