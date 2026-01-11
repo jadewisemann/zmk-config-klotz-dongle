@@ -1,5 +1,3 @@
-#include <dt-bindings/zmk/physical_layouts.h>
-
 / {
     klotz_physical_layout: klotz_physical_layout {
         compatible = "zmk,physical-layout";
