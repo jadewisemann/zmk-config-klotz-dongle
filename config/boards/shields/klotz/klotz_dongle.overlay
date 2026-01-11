@@ -13,7 +13,8 @@
         /delete-property/ zmk,backlight;
     };
 
-    mock_kscan: kscan {
+    /* 실제 kscan0 노드와 겹치지 않도록 이름을 zmk_mock_kscan으로 변경 */
+    mock_kscan: zmk_mock_kscan {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
