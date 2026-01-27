@@ -60,12 +60,12 @@
 		//status = "disabled";
 	};
 
-	sensors {
+	sensors: sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
 	};
 
-	soft_off_wakers {
+	soft_off_wakers: soft_off_wakers {
 		compatible = "zmk,soft-off-wakeup-sources";
 		wakeup-sources = <&kscan0>;
 	};

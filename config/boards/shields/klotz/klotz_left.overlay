@@ -17,7 +17,11 @@
 };
 
 &left_encoder {
-	status = "okay";
+	status = "disabled";
+};
+
+&sensors {
+	status = "disabled";
 };
 
 &pwm0 {
