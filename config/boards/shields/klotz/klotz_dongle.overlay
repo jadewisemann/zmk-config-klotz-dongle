@@ -20,12 +20,10 @@
         events = <0>;
     };
 
-    /* 동글에서 물리 센서 노드 비활성화 */
-    /delete-node/ sensors;
-
-    /* 비활성화된 kscan0을 참조하여 발생하는 컴파일 에러 방지 */
-    /delete-node/ soft_off_wakers;
 };
+
+&sensors { status = "disabled"; };
+&soft_off_wakers { status = "disabled"; };
 
 &left_encoder { status = "disabled"; };
 &right_encoder { status = "disabled"; };
