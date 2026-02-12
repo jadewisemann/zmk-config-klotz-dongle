@@ -356,8 +356,9 @@ label= "NAV"                               ;
 bindings = <
 // ╷               ╷               ╷               ╷               ╷               ╷   ╷               ╷               ╷               ╷               ╷               ╷
     &kp N6 		    &kp N7		    &kp NUMBER_8    &kp N9     	    &kp N0              &none           &kp TAB         &kp ENTER       &kp BACKSPACE   &kp ESC
-    &kp N1          &kp N2     	    &kp N3     		&kp N4     	    &kp N5              &kp SPACE       &kp LEFT        &kp DOWN        &kp UP          &kp right
-    &kp LSHFT 	    &kp LALT        &kp COMMA       &kp DOT         &caps_word          &kp PRINTSCREEN &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP     &kp END                                                    &trans		    &trans  		    &trans          &trans
+    &kp N1          &kp N2     	    &kp N3     		&kp N4     	    &kp N5              &kp SPACE       &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT
+    &kp LSHFT 	    &kp LALT        &kp COMMA       &kp DOT         &caps_word          &kp PRINTSCREEN &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP     &kp END
+                                                    &trans		    &trans  		    &trans          &trans
 >;
 };
 
